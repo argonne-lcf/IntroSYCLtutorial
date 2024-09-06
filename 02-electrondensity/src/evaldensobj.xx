@@ -1,0 +1,36 @@
+
+void Field::evalDensity() {
+
+  vector<float> field;
+  float xmin = -10.0, xmax = 10.0;
+  float ymin = -10.0, ymax = 10.0;
+  float zmin = -5.0, zmax = 5.0;
+  float delta = 0.25;
+
+  int npoints_x = int((xmax - xmin) / delta);
+  int npoints_y = int((ymax - ymin) / delta);
+  int npoints_z = int((zmax - zmin) / delta);
+
+  std::cout << " Points ( " << npoints_x << "," << npoints_y << "," << npoints_z
+            << ")" << std::endl;
+  std::cout << " TotalPoints : " << npoints_x * npoints_y * npoints_z
+            << std::endl;
+
+  for (int i = 0; i < npoints_x; i++) {
+    float x = xmin + i * delta;
+    for (int j = 0; j < npoints_y; j++) {
+      float y = ymin + j * delta;
+      for (int k = 0; k < npoints_z; k++) {
+        float z = zmin + k * delta;
+        Rvector r(x, y, z);
+        float den = Density(r);
+
+        field.push_back(den);
+      }
+    }
+  }
+
+  dumpCube(xmin, ymin, zmin, delta, npoints_x, npoints_y, npoints_z, field,
+           "densityCPU.cube");
+  dumpXYZ("structure.xyz");
+}

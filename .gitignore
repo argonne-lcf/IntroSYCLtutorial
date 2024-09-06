@@ -1,0 +1,17 @@
+.ipynb_checkpoints/*
+.ipynb_checkpoints
+*-checkpoint.py
+__pycache__/*
+*.pyc
+.DS_Store
+.vscode
+a.out
+*.o
+compute.cpp
+run-sycl.sh
+*.x
+*.cube
+build
+version.hpp
+Makefile
+functionED.xx

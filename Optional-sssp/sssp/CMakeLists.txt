@@ -1,0 +1,1 @@
+add_executable(sssp delta-stepping.cpp)
