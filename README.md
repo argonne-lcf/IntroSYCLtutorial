@@ -9,10 +9,11 @@ The purpose of this tutorial is to introduce SYCL programming concepts to interm
 
 
 ## What's inside?
-* [Introduction to SYCL](https://github.com/SYCLTutorials/Intro2024/tree/main/01-intro).
+* [Introduction to SYCL](https://github.com/SYCLTutorials/Intro2024/tree/main/01-intro)
+* [Hands-On: NBody Simulation)](https://github.com/argonne-lcf/IntroSYCLtutorial/tree/main/04-NBody)
 * [Hands-On: Electron density grid evaluation](https://github.com/SYCLTutorials/Intro2024/tree/main/02-electrondensity)
 * [Hands-On: Marching cubes algorithm](https://github.com/SYCLTutorials/Intro2024/tree/main/03-marchingCubes)
-* [Hands-On: Single Source Shortest Path (SSSP)](https://github.com/SYCLTutorials/Intro2024/tree/main/04-sssp)
+
 
 
 ## Cloning this repo
@@ -20,7 +21,7 @@ The purpose of this tutorial is to introduce SYCL programming concepts to interm
 You will need to clone this repo in the computing environment for this tutorial. Use the following command line:
 
 ```
-git clone https://github.com/SYCLTutorials/Intro2024.git
+git clone https://github.com/argonne-lcf/IntroSYCLtutorial.git
 ```
 
 If you are running on Intel Dev Cloud, launch a terminal and execute the above `git clone` command. This will clone this repository in your home directory. Navigate to directory "Intro2024" and the contents of this repository will be there.
