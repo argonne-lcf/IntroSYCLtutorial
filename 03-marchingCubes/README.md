@@ -6,7 +6,7 @@ This project provides a parallel implementation of the Marching Cubes algorithm 
 
 # Tutorial
 
-- [03-MarchingCubes.ipynb](03-MarchingCubes.ipynb)
+- [MarchingCubes.ipynb](MarchingCubes.ipynb)
 
 # Compile & Run
 
