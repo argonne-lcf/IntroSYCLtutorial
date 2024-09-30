@@ -6,7 +6,7 @@ In this example we study the Delta stepping algorithm. This algorithm is efficie
 
 <hr>  
 <p align="center">
-  <img src="sssp/animation/MovingVertices.gif" alt="Space Points">
+  <img src="animation/MovingVertices.gif" alt="Space Points">
 </p>
 
 Start here
