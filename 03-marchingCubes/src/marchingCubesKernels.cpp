@@ -2,7 +2,6 @@
 #include <oneapi/dpl/execution>
 #include <oneapi/dpl/algorithm>
 #include <cstring>
-//#include "defines.h"
 #include "tables.h"
 
 typedef unsigned int uint;
@@ -17,8 +16,8 @@ sycl::buffer<uint, 1> *numVertsTableBuf;
 sycl::buffer<uchar, 1> *volumeBuf;
 
 extern "C" void allocateTextures(sycl::queue &q, 
-		                 uint **d_edgeTable, 
-				 uint **d_triTable,
+		                         uint **d_edgeTable, 
+				                 uint **d_triTable,
                                  uint **d_numVertsTable) 
 {
   *d_edgeTable = static_cast<uint *>(sycl::malloc_device(256 * sizeof(uint), q));
@@ -36,7 +35,7 @@ extern "C" void allocateTextures(sycl::queue &q,
 }
 
 extern "C" void createVolumeTexture(uchar *d_volume, 
-		                    size_t buffSize) 
+		                            size_t buffSize) 
 {
   volumeBuf = new sycl::buffer<uchar, 1>(d_volume, sycl::range<1>(buffSize));
 }
@@ -49,8 +48,8 @@ extern "C" void destroyAllTextureObjects()
 }
 
 float tangle(float x, 
-	     float y, 
-	     float z) 
+	         float y, 
+	         float z) 
 {
   x *= 3.0f;
   y *= 3.0f;
@@ -74,10 +73,11 @@ sycl::float4 fieldFunc4(sycl::float3 p)
   return sycl::float4{dx, dy, dz, v};
 }
 
-float sampleVolume(sycl::accessor<uchar, 1, sycl::access_mode::read> volumeAcc, 
-		   uchar *data, 
-		   sycl::uint3 p, 
-		   sycl::uint3 gridSize) 
+float sampleVolume(sycl::accessor<uchar, 1, 
+                   sycl::access_mode::read> volumeAcc, 
+		           uchar *data, 
+		           sycl::uint3 p, 
+		           sycl::uint3 gridSize) 
 {
   p.x() = sycl::min(p.x(), gridSize.x() - 1);
   p.y() = sycl::min(p.y(), gridSize.y() - 1);
@@ -87,8 +87,8 @@ float sampleVolume(sycl::accessor<uchar, 1, sycl::access_mode::read> volumeAcc,
 }
 
 sycl::uint3 calcGridPos(uint i, 
-		        sycl::uint3 gridSizeShift, 
-			sycl::uint3 gridSizeMask) 
+		                sycl::uint3 gridSizeShift, 
+			            sycl::uint3 gridSizeMask) 
 {
   sycl::uint3 gridPos;
   gridPos.x() = i & gridSizeMask.x();
@@ -98,22 +98,22 @@ sycl::uint3 calcGridPos(uint i,
 }
 
 sycl::float3 vertexInterp(float isolevel, 
-		          sycl::float3 p0, 
-			  sycl::float3 p1, 
-			  float f0, 
-			  float f1) 
+		                  sycl::float3 p0, 
+			              sycl::float3 p1, 
+			              float f0, 
+			              float f1) 
 {
   float t = (isolevel - f0) / (f1 - f0);
   return p0 + t * (p1 - p0);
 }
 
 void vertexInterp2(float isolevel, 
-		   sycl::float3 p0, 
-		   sycl::float3 p1, 
-		   sycl::float4 f0, 
-		   sycl::float4 f1, 
-		   sycl::float3 &p, 
-		   sycl::float3 &n) 
+		           sycl::float3 p0, 
+		           sycl::float3 p1, 
+		           sycl::float4 f0, 
+		           sycl::float4 f1, 
+		           sycl::float3 &p, 
+		           sycl::float3 &n) 
 {
   float t = (isolevel- f0.w()) / (f1.w() - f0.w());
   p = p0 + t * (p1 - p0);
@@ -123,7 +123,7 @@ void vertexInterp2(float isolevel,
 }
 
 extern "C" void ThrustScanWrapper(unsigned int *output, 
-		                  unsigned int *input,
+		                          unsigned int *input,
                                   unsigned int numElements) 
 {
   oneapi::dpl::exclusive_scan(oneapi::dpl::execution::dpcpp_default, input, input + numElements, output, 0);
