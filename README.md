@@ -1,4 +1,4 @@
-# SYCL Tutorial 2024
+# SYCL Tutorial Carla 2025
 
 **Note:** This tutorial is currently under development and is being updated continually. Please check back regularly for the latest updates.
 
@@ -9,10 +9,10 @@ The purpose of this tutorial is to introduce SYCL programming concepts to interm
 
 
 ## What's inside?
-* [Introduction to SYCL](https://github.com/SYCLTutorials/Intro2024/tree/main/01-intro)
-* [Hands-On: NBody Simulation)](https://github.com/argonne-lcf/IntroSYCLtutorial/tree/main/04-NBody)
-* [Hands-On: Electron density grid evaluation](https://github.com/SYCLTutorials/Intro2024/tree/main/02-electrondensity)
-* [Hands-On: Marching cubes algorithm](https://github.com/SYCLTutorials/Intro2024/tree/main/03-marchingCubes)
+* [Introduction to SYCL](https://github.com/SYCLTutorials/IntroSYCLCarla/tree/main/01-intro)
+* [Hands-On: NBody Simulation)](https://github.com/SYCLTutorials/IntroSYCLCarla/tree/main/04-NBody)
+* [Hands-On: Electron density grid evaluation](https://github.com/SYCLTutorials/IntroSYCLCarla/tree/main/02-electrondensity)
+* [Hands-On: Marching cubes algorithm](https://github.com/SYCLTutorials/IntroSYCLCarla/tree/main/03-marchingCubes)
 
 
 
