@@ -37,8 +37,11 @@ If you are running on Intel Dev Cloud, launch a terminal and execute the above `
    * Arc Intel Drivers
    * WSL2 Ubuntu (optional)
 
-  
+## Contributors
+* Álvaro Vazquez Mayagoitia [@alvarovm](https://www.github.com/alvarovm)
+* Silvio Rizzi
+
 ## Acknowledgements and license
-This research used resources of the Argonne Leadership Computing Facility, which is a DOE Office of Science User Facility supported under Contract DE-AC02-06CH11357. Argonne National Laboratory’s work was supported by the U.S. Department of Energy, Office of Science, under contract DE-AC02-06CH11357.
+This research used resources of the Argonne Leadership Computing Facility, which is a DOE Office of Science User Facility supported under Contract DE-AC02-06CH11357. Argonne National Laboratory’s work was supported by the U.S. Department of Energy, Office of Science, under contract DE-AC02-06CH11357. AVM was supported by the Office of Science, U.S. Department of Energy, under contract DE-AC02-06CH11357.
 
 
